@@ -1,5 +1,5 @@
 import BagEntry from "./BagEntry"
-
+import PropTypes, { object } from "prop-types";
 function BagList(props)
 {
   const openCreateForm = () => {
@@ -19,11 +19,17 @@ function BagList(props)
                   handle = {props.handle}
                   poundsLeft = {bag.poundsLeft}
                   key = {index} 
+                  dispIndex = {index}
                   id = {bag.id}/>
       )}
       <button onClick={openCreateForm}>Click to create a new Bag</button>
     </div>
   );
+}
+
+BagList.propTypes = {
+  bags: PropTypes.arrayOf(object).isRequired,
+  handle: PropTypes.func.isRequired
 }
 
 export default BagList;
