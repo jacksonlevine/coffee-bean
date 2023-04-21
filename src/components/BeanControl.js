@@ -19,6 +19,7 @@ class BeanControl extends Component
           price: "4.50 per pound",
           roast: "dark",
           id: 0,
+          poundsLeft: 130.0
         } //seed remove this later
       ],
       idVisible: 0
@@ -72,7 +73,8 @@ class BeanControl extends Component
                                          [0];
         mainElement = 
         <BagDetails bag = {thisBag}
-                    handle = {this.changeState}/>; break;}
+                    handle = {this.changeState}
+                    addOrUpdateBag = {this.addOrUpdateBag}/>; break;}
     case "form":
          mainElement = 
          <BagForm addOrUpdateBag = {this.addOrUpdateBag}
@@ -88,6 +90,7 @@ class BeanControl extends Component
                   origin = {thisBag.origin}
                   price = {thisBag.price}
                   roast = {thisBag.roast}
+                  poundsLeft = {thisBag.poundsLeft}
                   id = {thisBag.id}/>; break;}
     }
 

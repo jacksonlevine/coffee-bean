@@ -18,6 +18,7 @@ class BagEntry extends Component
         <h3>{this.props.origin}</h3>
         <h3>{this.props.price}</h3>
         <h3>{this.props.roast}</h3>
+        <h3>{this.props.poundsLeft}</h3>
         <button onClick={this.onClickDetails}>View Details</button>
         <button onClick={this.onClickEdit}>Edit</button>
       </div>

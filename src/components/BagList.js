@@ -16,6 +16,7 @@ function BagList(props)
                   price = {bag.price}
                   roast = {bag.roast}
                   handle = {props.handle}
+                  poundsLeft = {bag.poundsLeft}
                   key = {index} 
                   id = {bag.id}/>
       )}

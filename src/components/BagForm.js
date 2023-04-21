@@ -5,6 +5,7 @@ function BagForm(props) {
   const [origin, setOrigin] = useState(props.origin || "");
   const [price, setPrice] = useState(props.price || "");
   const [roast, setRoast] = useState(props.roast || "");
+  const [poundsLeft, setPoundsLeft] = useState(props.poundsLeft || "");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,6 +15,7 @@ function BagForm(props) {
         origin: origin,
         price: price,
         roast: roast,
+        poundsLeft: poundsLeft,
         id: props.id
       }
     );
@@ -52,6 +54,14 @@ function BagForm(props) {
             type="text" 
             value={roast}
             onChange={event => setRoast(event.target.value)}
+        />
+      </label>
+      <label>
+        Enter pounds of this coffee in stock:
+        <input 
+            type="text" 
+            value={poundsLeft}
+            onChange={event => setPoundsLeft(event.target.value)}
         />
       </label>
       <button type="submit">Click to submit!</button>
