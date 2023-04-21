@@ -14,13 +14,13 @@ class BeanControl extends Component
       pageVisible: "viewall",
       bags: [
         {
-          name: "Donut Shop",
+          name: "Smoky Delight",
           origin: "Lithuania",
           price: "4.50",
           roast: "Dark",
           id: 0,
           poundsLeft: 130.0
-        } //seed remove this later
+        }
       ],
       idVisible: 0
     }

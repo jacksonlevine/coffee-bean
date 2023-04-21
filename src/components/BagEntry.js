@@ -1,4 +1,5 @@
 import { Component } from "react";
+import PropTypes from 'prop-types';
 
 class BagEntry extends Component
 {
@@ -47,5 +48,15 @@ class BagEntry extends Component
     );
   }
 }
+
+BagEntry.propTypes = {
+  name: PropTypes.string.isRequired,
+  origin: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  roast: PropTypes.string.isRequired,
+  handle: PropTypes.func.isRequired,
+  poundsLeft: PropTypes.number.isRequired,
+  id: PropTypes.number
+};
 
 export default BagEntry;

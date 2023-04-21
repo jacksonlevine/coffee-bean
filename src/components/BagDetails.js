@@ -1,4 +1,5 @@
 import { Component } from "react";
+import PropTypes from 'prop-types';
 
 class BagDetails extends Component
 {
@@ -32,5 +33,11 @@ class BagDetails extends Component
     );
   }
 }
+
+BagDetails.propTypes = {
+  bag: PropTypes.object.isRequired,
+  handle: PropTypes.func.isRequired,
+  addOrUpdateBag: PropTypes.func.isRequired
+};
 
 export default BagDetails;

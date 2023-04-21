@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
 function BagForm(props) {
   const [name, setName] = useState(props.name || "");
@@ -79,5 +80,16 @@ function BagForm(props) {
     </form>
   )
 }
+
+BagForm.propTypes = {
+  addOrUpdateBag: PropTypes.func.isRequired,
+  handle: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  origin: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  roast: PropTypes.string.isRequired,
+  poundsLeft: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired
+};
 
 export default BagForm;

@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+## Component Diagram:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![component diagram](./diagram.png)
 
 ## Available Scripts
 
