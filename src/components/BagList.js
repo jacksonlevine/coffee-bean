@@ -14,3 +14,5 @@ function BagList(props)
             )}
   </div>
 }
+
+export default BagList;

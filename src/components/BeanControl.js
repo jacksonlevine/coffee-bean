@@ -1,4 +1,5 @@
 import { Component } from "react";
+import BagList from "./BagList";
 
 
 class BeanControl extends Component
@@ -22,18 +23,16 @@ class BeanControl extends Component
 
   render()
   {
+    let mainElement = null;
+
+    switch(this.state.pageVisible){
+      case "viewall": mainElement = 
+      <BagList bags = {this.state.bags}/>; 
+      break;
+    }
+
     return (
-      <div className="bagList">
-            {this.state.bags.map(
-                (bag, index) =>
-                    <BagEntry
-                        name = {bag.name}
-                        origin = {bag.origin}
-                        price = {bag.price}
-                        roast = {bag.roast}
-                        key = {index}/>
-            )}
-      </div>
+      {mainElement}
     );
   }
 }
