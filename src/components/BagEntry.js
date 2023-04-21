@@ -11,6 +11,10 @@ class BagEntry extends Component
     this.props.handle()("idVisible")(this.props.id);
     this.props.handle()("pageVisible")("updateform");
   };
+  onClickDelete = () => {
+    this.props.handle()("idVisible")(this.props.id);
+    this.props.handle()("pageVisible")("confirmdelete");
+  };
 
   outerStyle = {
     display: "flex",
@@ -43,6 +47,7 @@ class BagEntry extends Component
         <div style = {this.innerStyle}>
           <button onClick={this.onClickDetails}>View Details/Sell</button>
           <button onClick={this.onClickEdit}>Edit</button>
+          <button onClick={this.onClickDelete}>Delete</button>
         </div>
       </div>
     );
