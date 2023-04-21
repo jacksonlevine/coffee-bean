@@ -33,24 +33,27 @@ class BeanControl extends Component
     );
   };
 
-  addBag = (bag) => {
-    this.changeState()("bags")(
-      [...this.state.bags, 
-      {
-        ...bag,
-        id: this.state.bags.length
-      }]
-    );
-  };
-
-  updateBag = (bag) => {
-    this.changeState()("bags")(
-      [...this.state.bags.filter(b=> b.id != bag.id), 
-      {
-        ...bag,
-        id: bag.id
-      }]
-    );
+  addOrUpdateBag = (bag) => {
+    if(this.state.bags.filter(b=>b.id===bag.id).length === 0)
+    {
+      this.changeState()("bags")(
+        [...this.state.bags, 
+        {
+          ...bag,
+          id: this.state.bags.length
+        }]
+      );
+    } else {
+      this.changeState()("bags")(
+        [
+          {
+            ...bag,
+            id: bag.id
+          },
+          ...this.state.bags.filter(b=> b.id !== bag.id), 
+        ]
+      );
+    }
   };
 
   render()
@@ -58,21 +61,32 @@ class BeanControl extends Component
     let mainElement = null;
 
     switch(this.state.pageVisible){
-    case "viewall": 
+    case "viewall": default:
         mainElement = 
         <BagList bags = {this.state.bags}
                  handle = {this.changeState}/>; break;
 
     case "details": 
-        const thisBag = this.state.bags.filter(
+        {const thisBag = this.state.bags.filter(
                                          bag => bag.id === this.state.idVisible)[0];
         mainElement = 
         <BagDetails bag = {thisBag}
-                    handle = {this.changeState}/>; break;
+                    handle = {this.changeState}/>; break;}
     case "form":
          mainElement = 
-         <BagForm addBag = {this.addBag}
+         <BagForm addOrUpdateBag = {this.addOrUpdateBag}
                   handle = {this.changeState}/>; break;
+    case "updateform":
+         {const thisBag = this.state.bags.filter(
+                                    bag => bag.id === this.state.idVisible)[0];
+         mainElement = 
+         <BagForm addOrUpdateBag = {this.addOrUpdateBag}
+                  handle = {this.changeState}
+                  name = {thisBag.name}
+                  origin = {thisBag.origin}
+                  price = {thisBag.price}
+                  roast = {thisBag.roast}
+                  id = {thisBag.id}/>; break;}
     }
 
     return (

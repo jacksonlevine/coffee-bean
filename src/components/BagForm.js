@@ -1,23 +1,22 @@
 import { useState } from "react";
 
 function BagForm(props) {
-  const [name, setName] = useState(props.name);
-  const [origin, setOrigin] = useState(props.origin);
-  const [price, setPrice] = useState(props.price);
-  const [roast, setRoast] = useState(props.roast);
-  const id = props.id;
+  const [name, setName] = useState(props.name || "");
+  const [origin, setOrigin] = useState(props.origin || "");
+  const [price, setPrice] = useState(props.price || "");
+  const [roast, setRoast] = useState(props.roast || "");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.addBag(
+    props.addOrUpdateBag(
       {
         name: name,
         origin: origin,
         price: price,
         roast: roast,
-        id: id
+        id: props.id
       }
-    )
+    );
     props.handle()("pageVisible")("viewall");
   }
 
