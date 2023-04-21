@@ -27,7 +27,8 @@ class BeanControl extends Component
 
     switch(this.state.pageVisible){
       case "viewall": mainElement = 
-      <BagList bags = {this.state.bags}/>; 
+      <BagList bags = {this.state.bags}
+               handle = {this.changeState}/>; 
       break;
     }
 
