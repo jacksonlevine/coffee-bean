@@ -19,14 +19,18 @@ class BagDetails extends Component
     );
   };
 
+  styles = {
+    backgroundColor: "lightblue",
+  };
+
   render() {
     return (
-      <div className="bagDetails">
+      <div className="bagDetails" style={this.styles}>
         <h2>Name: {this.props.bag.name}</h2>
-        <h2>Origin: {this.props.bag.origin}</h2>
-        <h2>Price: {this.props.bag.price}</h2>
-        <h2>Roast: {this.props.bag.roast}</h2>
-        <h2>Pounds left: {this.props.bag.poundsLeft}</h2>
+        <h3>Origin: {this.props.bag.origin}</h3>
+        <h3>Price: {this.props.bag.price}</h3>
+        <h3>Roast: {this.props.bag.roast}</h3>
+        <h3>Pounds left: {this.props.bag.poundsLeft}</h3>
         <button onClick={this.onClickBack}>Back to main list</button>
         <button onClick={this.onClickSell}>Sell a pound of this</button>
       </div>

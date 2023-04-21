@@ -22,7 +22,9 @@ function BagList(props)
                   dispIndex = {index}
                   id = {bag.id}/>
       )}
-      <button onClick={openCreateForm}>Click to create a new Bag</button>
+      <div style={{display:"flex",justifyContent:"center"}}>
+        <button onClick={openCreateForm}>Click to create a new Bag</button>
+      </div>
     </div>
   );
 }

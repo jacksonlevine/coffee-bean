@@ -4,7 +4,12 @@ function App() {
   const styles = {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: "lightgreen",
+    margin: "0 35%",
+    paddingBottom: "30px",
+    borderRadius: "60px",
+    fontFamily: "Tahoma",
   };
 
   return (
