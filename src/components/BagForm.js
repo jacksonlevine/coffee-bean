@@ -5,7 +5,13 @@ function BagForm(props) {
   const [origin, setOrigin] = useState(props.origin || "");
   const [price, setPrice] = useState(props.price || "");
   const [roast, setRoast] = useState(props.roast || "");
-  const [poundsLeft, setPoundsLeft] = useState(props.poundsLeft || "");
+  const [poundsLeft, setPoundsLeft] = useState(props.poundsLeft || 130);
+
+  const styles = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,10 +26,14 @@ function BagForm(props) {
       }
     );
     props.handle()("pageVisible")("viewall");
-  }
+  };
+
+  const handleCancel = () => {
+    props.handle()("pageVisible")("viewall");
+  };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} style={styles}>
       <label>
         Enter coffee name:
         <input 
@@ -65,6 +75,7 @@ function BagForm(props) {
         />
       </label>
       <button type="submit">Click to submit!</button>
+      <button onClick={handleCancel}>Cancel bag creation</button>
     </form>
   )
 }

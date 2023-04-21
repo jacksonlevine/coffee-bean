@@ -12,7 +12,7 @@ class BagDetails extends Component
         origin: this.props.bag.origin,
         price: this.props.bag.price,
         roast: this.props.bag.roast,
-        poundsLeft: this.props.bag.poundsLeft-1,
+        poundsLeft: Math.max(this.props.bag.poundsLeft-1, 0),
         id: this.props.bag.id
       }
     );
