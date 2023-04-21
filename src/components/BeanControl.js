@@ -12,11 +12,19 @@ class BeanControl extends Component
     }
   }
 
+  changeState = () => (property) => (newValue) => {
+    this.setState(
+      {
+        [property]: newValue
+      }
+    );
+  }
+
   render()
   {
     return (
       <div className="bagList">
-        {this.state.bags.map(
+            {this.state.bags.map(
                 (bag, index) =>
                     <BagEntry
                         name = {bag.name}
