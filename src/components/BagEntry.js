@@ -3,9 +3,9 @@ import { Component } from "react";
 class BagEntry extends Component
 {
   onClickDetails = () => {
+    this.props.handle()("idVisible")(this.props.id);
     this.props.handle()("pageVisible")("details");
-    this.props.handle()("idVisible")(this.props.key);
-  }
+  };
 
   render() {
     return (
@@ -14,7 +14,7 @@ class BagEntry extends Component
         <h3>{this.props.origin}</h3>
         <h3>{this.props.price}</h3>
         <h3>{this.props.roast}</h3>
-        <button onClick={this.onClickDetails} >View Details</button>
+        <button onClick={this.onClickDetails}>View Details</button>
       </div>
     );
   }

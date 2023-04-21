@@ -1,6 +1,7 @@
 import { Component } from "react";
 import BagList from "./BagList";
 import BagDetails from "./BagDetails";
+import React from "react";
 
 
 class BeanControl extends Component
@@ -10,7 +11,15 @@ class BeanControl extends Component
     super();
     this.state = {
       pageVisible: "viewall",
-      bags: [],
+      bags: [
+        {
+          name: "test2",
+          origin: "Lithuania",
+          price: "4.50 per pound",
+          roast: "dark",
+          id: 1,
+        } //seed remove this later
+      ],
       idVisible: 0
     }
   }
@@ -21,7 +30,7 @@ class BeanControl extends Component
         [property]: newValue
       }
     );
-  }
+  };
 
   render()
   {
@@ -31,17 +40,22 @@ class BeanControl extends Component
     case "viewall": 
         mainElement = 
         <BagList bags = {this.state.bags}
-                handle = {this.changeState}/>; break;
+                 handle = {this.changeState}/>; break;
 
     case "details": 
         const thisBag = this.state.bags.filter(
-                                         bag => bag.key === this.state.idVisible)[0];
+                                         bag => bag.id === this.state.idVisible)[0];
         mainElement = 
-        <BagDetails bag = {thisBag}/>; break;
+        <BagDetails bag = {thisBag}
+                    handle = {this.changeState}/>; break;
     }
 
     return (
-      {mainElement}
+      <React.Fragment>
+        {mainElement}
+      </React.Fragment>
     );
   }
 }
+
+export default BeanControl;
