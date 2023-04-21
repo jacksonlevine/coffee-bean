@@ -6,10 +6,11 @@ function App() {
     flexDirection: "column",
     alignItems: "center",
     backgroundColor: "lightgreen",
-    margin: "0 35%",
+    margin: "0 30%",
     paddingBottom: "30px",
     borderRadius: "60px",
     fontFamily: "Tahoma",
+    padding: "30px"
   };
 
   return (

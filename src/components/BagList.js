@@ -8,7 +8,7 @@ function BagList(props)
 
   return (
     <div className="bagList">
-      <h2>List of coffee beans:</h2>
+      <h2>Our Options:</h2>
       {props.bags.map(
           (bag, index) =>
               <BagEntry
