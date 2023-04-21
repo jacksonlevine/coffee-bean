@@ -2,6 +2,10 @@ import BagEntry from "./BagEntry"
 
 function BagList(props)
 {
+  const openCreateForm = () => {
+    props.handle()("pageVisible")("form");
+  }
+
   return (
     <div className="bagList">
       {props.bags.map(
@@ -15,6 +19,7 @@ function BagList(props)
                   key = {index} 
                   id = {bag.id}/>
       )}
+      <button onClick={openCreateForm}>Click to create a new Bag</button>
     </div>
   );
 }

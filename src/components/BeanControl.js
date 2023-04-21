@@ -2,6 +2,7 @@ import { Component } from "react";
 import BagList from "./BagList";
 import BagDetails from "./BagDetails";
 import React from "react";
+import BagForm from "./BagForm";
 
 
 class BeanControl extends Component
@@ -17,7 +18,7 @@ class BeanControl extends Component
           origin: "Lithuania",
           price: "4.50 per pound",
           roast: "dark",
-          id: 1,
+          id: 0,
         } //seed remove this later
       ],
       idVisible: 0
@@ -29,6 +30,16 @@ class BeanControl extends Component
       {
         [property]: newValue
       }
+    );
+  };
+
+  addBag = (bag) => {
+    this.changeState()("bags")(
+      [...this.state.bags, 
+      {
+        ...bag,
+        id: this.state.bags.length
+      }]
     );
   };
 
@@ -48,6 +59,10 @@ class BeanControl extends Component
         mainElement = 
         <BagDetails bag = {thisBag}
                     handle = {this.changeState}/>; break;
+    case "form":
+         mainElement = 
+         <BagForm addBag = {this.addBag}
+                  handle = {this.changeState}/>; break;
     }
 
     return (
