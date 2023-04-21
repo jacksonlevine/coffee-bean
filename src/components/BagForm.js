@@ -22,26 +22,38 @@ function BagForm(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input 
-          type="text" 
-          value={name}
-          onChange={event => setName(event.target.value)}
-      />
-      <input 
-          type="text" 
-          value={origin}
-          onChange={event => setOrigin(event.target.value)}
-      />
-      <input 
-          type="text" 
-          value={price}
-          onChange={event => setPrice(event.target.value)}
-      />
-      <input 
-          type="text" 
-          value={roast}
-          onChange={event => setRoast(event.target.value)}
-      />
+      <label>
+        Enter coffee name:
+        <input 
+            type="text" 
+            value={name}
+            onChange={event => setName(event.target.value)}
+        />
+      </label>
+      <label>
+        Enter origin:
+        <input 
+            type="text" 
+            value={origin}
+            onChange={event => setOrigin(event.target.value)}
+        />
+      </label>
+      <label>
+        Enter coffee price per pound:
+        <input 
+            type="text" 
+            value={price}
+            onChange={event => setPrice(event.target.value)}
+        />
+      </label>
+      <label>
+        Enter coffee's roast (light, medium or dark):
+        <input 
+            type="text" 
+            value={roast}
+            onChange={event => setRoast(event.target.value)}
+        />
+      </label>
       <button type="submit">Click to submit!</button>
     </form>
   )

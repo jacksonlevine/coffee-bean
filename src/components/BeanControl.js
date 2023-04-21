@@ -68,7 +68,8 @@ class BeanControl extends Component
 
     case "details": 
         {const thisBag = this.state.bags.filter(
-                                         bag => bag.id === this.state.idVisible)[0];
+                                         bag => bag.id === this.state.idVisible)
+                                         [0];
         mainElement = 
         <BagDetails bag = {thisBag}
                     handle = {this.changeState}/>; break;}
@@ -78,7 +79,8 @@ class BeanControl extends Component
                   handle = {this.changeState}/>; break;
     case "updateform":
          {const thisBag = this.state.bags.filter(
-                                    bag => bag.id === this.state.idVisible)[0];
+                                          bag => bag.id === this.state.idVisible)
+                                          [0];
          mainElement = 
          <BagForm addOrUpdateBag = {this.addOrUpdateBag}
                   handle = {this.changeState}
