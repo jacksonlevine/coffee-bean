@@ -43,6 +43,16 @@ class BeanControl extends Component
     );
   };
 
+  updateBag = (bag) => {
+    this.changeState()("bags")(
+      [...this.state.bags.filter(b=> b.id != bag.id), 
+      {
+        ...bag,
+        id: bag.id
+      }]
+    );
+  };
+
   render()
   {
     let mainElement = null;

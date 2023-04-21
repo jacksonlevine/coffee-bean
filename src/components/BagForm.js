@@ -1,18 +1,21 @@
 import { useState } from "react";
 
 function BagForm(props) {
-  const [name, setName] = useState("");
-  const [origin, setOrigin] = useState("");
-  const [price, setPrice] = useState("");
-  const [roast, setRoast] = useState("");
+  const [name, setName] = useState(props.name);
+  const [origin, setOrigin] = useState(props.origin);
+  const [price, setPrice] = useState(props.price);
+  const [roast, setRoast] = useState(props.roast);
+  const id = props.id;
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     props.addBag(
       {
         name: name,
         origin: origin,
         price: price,
         roast: roast,
+        id: id
       }
     )
     props.handle()("pageVisible")("viewall");
