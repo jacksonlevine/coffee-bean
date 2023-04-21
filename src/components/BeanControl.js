@@ -109,7 +109,8 @@ class BeanControl extends Component
                                             console.log(thisBag)
           mainElement = 
           <BagConfirmDelete bag = {thisBag}
-                      delete = {this.delete}/>;
+                      delete = {this.delete}
+                      handle = {this.changeState}/>;
            break;}
     }
 
