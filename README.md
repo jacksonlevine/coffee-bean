@@ -7,7 +7,7 @@
 
 ## Description:
 
-A site for an imaginary coffee shop, in which the user can see what coffee beans are available and purchase pounds of them at a time. Has Create, Read, and Update features.
+A site for an imaginary coffee shop, in which the user can see what coffee beans are available and purchase pounds of them at a time. Has Create, Read, Update, and Delete features.
 
 ## Technologies Used:
 * React.js
