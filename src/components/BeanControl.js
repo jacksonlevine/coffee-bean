@@ -4,7 +4,6 @@ import BagDetails from "./BagDetails";
 import React from "react";
 import BagForm from "./BagForm";
 
-
 class BeanControl extends Component
 {
   constructor()
