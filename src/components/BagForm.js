@@ -82,14 +82,14 @@ function BagForm(props) {
 }
 
 BagForm.propTypes = {
-  addOrUpdateBag: PropTypes.func.isRequired,
-  handle: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  origin: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
-  roast: PropTypes.string.isRequired,
-  poundsLeft: PropTypes.number.isRequired,
-  id: PropTypes.number.isRequired
+  addOrUpdateBag: PropTypes.func,
+  handle: PropTypes.func,
+  name: PropTypes.string,
+  origin: PropTypes.string,
+  price: PropTypes.string,
+  roast: PropTypes.string,
+  poundsLeft: PropTypes.number,
+  id: PropTypes.number
 };
 
 export default BagForm;

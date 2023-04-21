@@ -106,7 +106,6 @@ class BeanControl extends Component
           {const thisBag = this.state.bags.filter(
                                             bag => bag.id === this.state.idVisible)
                                             [0];
-                                            console.log(thisBag)
           mainElement = 
           <BagConfirmDelete bag = {thisBag}
                       delete = {this.delete}

@@ -9,6 +9,9 @@ function BagConfirmDelete(props)
       <button onClick={()=>{
         props.handle()("pageVisible")("viewall"); 
         props.delete(props.bag);}}>Delete permanently</button>
+      <button onClick={()=>{
+        props.handle()("pageVisible")("viewall");
+      }}>Cancel and return to main list</button>
     </div>
   );
 }
