@@ -16,7 +16,7 @@ class BagEntry extends Component
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    backgroundColor: "lightblue"
+    backgroundColor: this.props.dispIndex % 2 === 0 ? "lightblue" : "yellow"
   };
 
   innerStyle = {
@@ -35,9 +35,9 @@ class BagEntry extends Component
     return (
       <div className="bagEntry" style = {this.outerStyle}>
         <div style = {this.innerStyle}>
-          <h2>{this.props.name}:</h2>
+          <h2>{this.props.name}!</h2>
           <p style = {this.pStyle}>Price per lb: {this.props.price} </p>
-          <p style = {this.pStyle}>{this.props.roast} </p>
+          <p style = {this.pStyle}>Roast style: {this.props.roast} </p>
           <p style = {this.pStyle}>Pounds left: {this.props.poundsLeft}</p>
         </div>
         <div style = {this.innerStyle}>
