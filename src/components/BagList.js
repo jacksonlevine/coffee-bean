@@ -28,7 +28,6 @@ function BagList(props)
     </div>
   );
 }
-
 BagList.propTypes = {
   bags: PropTypes.arrayOf(object).isRequired,
   handle: PropTypes.func.isRequired
