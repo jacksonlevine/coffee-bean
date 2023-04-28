@@ -72,7 +72,7 @@ function BagForm(props) {
         <input 
             type="text" 
             value={poundsLeft}
-            onChange={event => setPoundsLeft(event.target.value)}
+            onChange={event => setPoundsLeft(parseInt(event.target.value))}
         />
       </label>
       <button type="submit">Click to submit!</button>
